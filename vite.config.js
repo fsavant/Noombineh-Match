@@ -4,7 +4,10 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Use relative paths so the build works inside a Capacitor/Android WebView
+  // Relative paths ('./') work for BOTH:
+  //  - GitHub Pages (served from /<repo-name>/)
+  //  - Capacitor / Android WebView (served from file://)
+  // If you ever switch to a custom domain at the root, you can use '/' instead.
   base: './',
   build: {
     outDir: 'dist',
